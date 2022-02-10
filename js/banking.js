@@ -19,6 +19,19 @@ function updateTotalField(totalFieldId, amount){
     totalElement.innerText = previousTotal + amount;
 }
 
+//  Shared Balance update function
+function updateBalance(amount, isAdd){
+    const balanceTotal = document.getElementById('balance-total');
+    const balanceTotalText = balanceTotal.innerText;
+    const previousBalanceTotal = parseFloat(balanceTotalText);
+    if(isAdd == true){
+        balanceTotal.innerText = previousBalanceTotal + amount;
+    }
+    else{
+        balanceTotal.innerText = previousBalanceTotal - amount;
+    }
+}
+
 document.getElementById('deposit-btn').addEventListener('click', function () {
     //get the input value
     // const depositInput = document.getElementById('deposit-input');
@@ -35,10 +48,11 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
     updateTotalField('deposit-total', depositAmount);
 
     // update balance
-    const balanceTotal = document.getElementById('balance-total');
+    /* const balanceTotal = document.getElementById('balance-total');
     const balanceTotalText = balanceTotal.innerText;
     const previousBalanceTotal = parseFloat(balanceTotalText);
-    balanceTotal.innerText = previousBalanceTotal + depositAmount;
+    balanceTotal.innerText = previousBalanceTotal + depositAmount; */
+    updateBalance(depositAmount, true);
 
 
 });
@@ -58,8 +72,10 @@ document.getElementById('withdraw-btn').addEventListener('click', function () {
     updateTotalField('withdraw-total', withdrawAmount);
 
     // update balance after withdraw
-    const balanceTotal = document.getElementById('balance-total');
+    /* const balanceTotal = document.getElementById('balance-total');
     const balanceTotalText = balanceTotal.innerText;
     const previousBalanceTotal = parseFloat(balanceTotalText);
-    balanceTotal.innerText = previousBalanceTotal - withdrawAmount;
+    balanceTotal.innerText = previousBalanceTotal - withdrawAmount; */
+
+    updateBalance(withdrawAmount, false);
 });
