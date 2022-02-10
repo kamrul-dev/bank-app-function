@@ -7,6 +7,8 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
     //get current deposit
     const depositTotal = document.getElementById('deposit-total');
     const depositTotalText = depositTotal.innerText;
+    depositTotal.innerText = depositAmount;
+    //
     
 
 }); 
