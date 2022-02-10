@@ -1,5 +1,6 @@
 // button event handler added
 
+// Share one function between two(desposit and withdraw) input field
 function getInputValue(inputId) {
     const inputField = document.getElementById(inputId);
     const inputAmountText = inputField.value;
