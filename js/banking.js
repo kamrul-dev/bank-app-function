@@ -1,8 +1,12 @@
 // button event handler added
-document.getElementById('deposit-btn').addEventListener('click', function(){
+document.getElementById('deposit-btn').addEventListener('click', function () {
     //get the input value
     const depositInput = document.getElementById('deposit-input');
     const depositAmount = depositInput.value;
-    console.log(depositAmount)
+
+    //get current deposit
+    const depositTotal = document.getElementById('deposit-total');
+    const depositTotalText = depositTotal.innerText;
+    
 
 }); 
