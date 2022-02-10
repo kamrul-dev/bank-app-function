@@ -5,7 +5,7 @@ function getInputValue(inputId) {
     const inputField = document.getElementById(inputId);
     const inputAmountText = inputField.value;
     const depositAmount = parseFloat(inputAmountText);
-    // clear deposit input field
+    // clear input field
     inputField.value = '';
     return depositAmount;
 }
