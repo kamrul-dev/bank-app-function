@@ -6,8 +6,7 @@ function getInputValue(){
     const depositAmount = parseFloat(depositAmountText);
     // clear deposit input field
     depositInput.value = '';
-    return depositAmount;
-    
+    return depositAmount;   
 }
 
 document.getElementById('deposit-btn').addEventListener('click', function () {
