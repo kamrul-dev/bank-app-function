@@ -20,6 +20,26 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
 
     // clear deposit input field
     depositInput.value = '';
-    
+});
 
-}); 
+// handle withdraw button
+document.getElementById('withdraw-btn').addEventListener('click', function(){
+    const widthdrawInput = document.getElementById('withdraw-input');
+    const widthdrawAmountText = widthdrawInput.value;
+    const withdrawAmount = parseFloat(widthdrawAmountText);
+
+    //update withdraw total
+    const withdrawTotal = document.getElementById('withdraw-total');
+    const previousWithdrawTotalText = withdrawTotal.innerText;
+    const previousWithdrawTotal = parseFloat(previousWithdrawTotalText);
+    withdrawTotal.innerText = previousWithdrawTotal + withdrawAmount;
+
+    // update balance after withdraw
+    const balanceTotal = document.getElementById('balance-total');
+    const balanceTotalText = balanceTotal.innerText;
+    const previousBalanceTotal = parseFloat(balanceTotalText);
+    balanceTotal.innerText = previousBalanceTotal - withdrawAmount;
+
+    // clear wittdraw input field
+    widthdrawInput.value = '';
+});
