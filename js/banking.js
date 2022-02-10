@@ -10,12 +10,12 @@ function getInputValue(inputId) {
     return depositAmount;
 }
 
-function updateTotalField(totalFieldId, depositAmount){
+function updateTotalField(totalFieldId, amount){
     const totalElement = document.getElementById(totalFieldId);
     const totalText = totalElement.innerText;
     const previousTotal = parseFloat(totalText);
     //existing amount + new anmount = total deposit
-    totalElement.innerText = previousTotal + depositAmount;
+    totalElement.innerText = previousTotal + amount;
 }
 
 document.getElementById('deposit-btn').addEventListener('click', function () {
